@@ -1,0 +1,137 @@
+from .forms import Usuario, Envio
+from django import forms
+from django.forms import ModelForm
+from django.forms import widgets
+from django.forms.models import ModelChoiceField
+from django.forms.widgets import Widget
+from .models import Usuario, Envio
+
+class Usuario(ModelForm):
+    class Meta: 
+        model= Usuario
+        fields = 'all'
+        labels ={
+            'usuario': 'Nombre de Usuario', 
+            'nombre': 'Nombre Persona', 
+            'password': 'Contraseña',
+            'correo': 'Correo electronico',
+            'telefono': 'Telefono',
+        }
+        
+
+
+        widgets={
+            'usuario': forms.TextInput(
+                attrs={
+                    'class': 'form-control', 
+                    'placeholder': 'Ingrese su Usuario', 
+                    'id': 'usuario'
+                }
+            ),  
+            'nombre': forms.TextInput(
+                attrs={
+                    'class': 'form-control', 
+                    'placeholder': 'Ingrese nombre', 
+                    'id': 'nombre'
+                }
+            ),
+            'password': forms.PasswordInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese su contraseña',
+                    'id': 'contraseña',
+                }
+            ),
+            'correo': forms.EmailInput(
+                attrs={
+                    'class': 'form-control', 
+                    'placeholder': 'Ingrese su Email', 
+                    'id': 'correo'
+                }
+            ), 
+            'telefono': forms.NumberInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese su número de telefono',
+                    'id': 'numero',
+                }
+            )
+
+            
+
+        }
+class Envio(ModelForm):
+    class Meta: 
+        model= Envio
+        fields = 'all'
+        labels ={
+            'rut': 'Rut',
+            'nombre':'Nombre' 
+            'email': 'email',
+            'phone': 'Telefono'
+            'ciudad': 'Ciudad', 
+            'comuna': 'Comuna',
+            'calle': 'Calle',
+            'casa': 'Numero Casa'
+        }
+        widgets={
+            'rut': forms.TextInput(
+                attrs={
+                    'class': 'form-control', 
+                    'placeholder': 'Ingrese rut', 
+                    'id': 'rut'
+                }
+            ),
+            'nombre': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese su Nombre',
+                    'id': 'nombre',
+                }
+            ), 
+            'email': forms.EmailInput(
+                attrs={
+                    'class': 'form-control', 
+                    'placeholder': 'Ingrese su Email', 
+                    'id': 'email'
+                }
+            ), 
+            'phone': forms.NumberInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese su Telefono ',
+                    'id': 'phone',
+                }
+            ),
+            'ciudad': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese ciudad',
+                    'id': 'ciudad',
+                }
+            ),
+            'comuna': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese comuna',
+                    'id': 'comuna',
+                }
+            ),
+            'calle': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese calle',
+                    'id': 'calle',
+                }
+            ),
+            'casa': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese N° De casa',
+                    'id': 'casa',
+                }
+            )
+
+            
+
+        }
