@@ -1,0 +1,861 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+<head>
+  <link rel="icon" href="{% static 'core/img/logo.ico' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'core/css/estilo.css' %}">
+  <title>Perricompras.cl</title>
+</head>
+<body>
+
+<!-- Barra de navegacion -->
+<div class="container-barra">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index"><img src="{% static 'core/img/logo1.png' %}" alt="logo" width="50" height="50"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index" style="color: white;" >Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#" style="color: white;">Articulos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="nosotros" style="color: white;">Sobre Nosotros  </a> 
+          </li>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="creacionuser">Crea tu cuenta</a></li>
+            <li><a class="dropdown-item" href="leer">Ver tu cuenta</a></li>
+          </ul>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+ <!-- Barra de navegacion FIN -->
+<br>
+
+<script src="https://cdn03.jotfor.ms/static/prototype.forms.js?3.3.34228" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/static/jotform.forms.js?3.3.34228" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/js/payments/PaymentListSettings/searchInProducts.js?v=3.3.34228" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/js/payments/PaymentListSettings/sortingProducts.js?v=3.3.34228" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/payments/stock.js?v=3.3.34228" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = false;
+	JotForm.extendsNewTheme = false;
+	JotForm.newPaymentUIForNewCreatedForms = false;
+	JotForm.clearFieldOnHide="disable";
+	JotForm.submitError="jumpToFirstError";
+
+	JotForm.init(function(){
+	/*INIT-START*/
+      productID = {"0":"input_3_1000","1":"input_3_1013","2":"input_3_1012","3":"input_3_1010","4":"input_3_1011","5":"input_3_1014"};
+      paymentType = "product";
+      JotForm.setCurrencyFormat('USD',true, 'point');
+      JotForm.totalCounter({"input_3_1000":{"price":"10000","shipping":{"flatRate":"2000"},"quantityField":"input_3_quantity_1000_0"},"input_3_1013":{"price":"3000","shipping":{"flatRate":"2000"},"quantityField":"input_3_quantity_1013_0"},"input_3_1012":{"price":"2500","shipping":{"flatRate":"2000"},"quantityField":"input_3_quantity_1012_0"},"input_3_1010":{"price":"20000","shipping":{"flatRate":"2000"},"quantityField":"input_3_quantity_1010_0"},"input_3_1011":{"price":"5000","shipping":{"flatRate":"2000"},"quantityField":"input_3_quantity_1011_0"},"input_3_1014":{"price":"10000","shipping":{"flatRate":"2000"},"quantityField":"input_3_quantity_1014_0"}});
+      $$('.form-product-custom_quantity').each(function(el, i){el.observe('blur', function(){isNaN(this.value) || this.value < 1 ? this.value = '0' : this.value = parseInt(this.value)})});
+      $$('.form-product-custom_quantity').each(function(el, i){el.observe('focus', function(){this.value == 0 ? this.value = '' : this.value})});
+      JotForm.handleProductLightbox();
+if (window.JotForm && JotForm.accessible) $('input_7').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_8').setAttribute('tabindex',0);
+      JotForm.alterTexts({"ageVerificationError":"Debe ser mayor de {minAge} años para enviar este formulario.","alphabetic":"Este campo solo puede contener letras.","alphanumeric":"Este campo solo puede contener letras y números.","ccDonationMinLimitError":"La Cantidad Mínima es {minAmount} {currency}","ccInvalidCVC":"El número CVC no es válido.","ccInvalidExpireDate":"La fecha de expiración no es válida","ccInvalidNumber":"El número de su tarjeta de crédito no es válido.","ccMissingDetails":"Por favor rellene los datos de su Tarjeta de Crédito","ccMissingDonation":"Favor ponga valores númericos en la cantidad a donar.","ccMissingProduct":"Por favor seleccione al menos un producto.","characterLimitError":"Demasiados caracteres. El límite es","confirmClearForm":"¿Está seguro que desea limpiar el formulario?","confirmEmail":"El correo electrónico no coincide","currency":"Este campo sólo puede contener valores de moneda.","cyrillic":"Este campo solo puede contener caracteres cirílicos.","dateInvalid":"Esta fecha no es valida. El formato de fecha es {format}","dateInvalidSeparate":"Esta fecha no es válida. Ponga una {element} válida","dateLimited":"Esta fecha no está disponible.","disallowDecimals":"Por favor, introduzca un número entero.","email":"Introduzca una dirección e-mail válida","fillMask":"El valor de este campo debe llenar la mascara","freeEmailError":"No se permiten cuentas de correo gratuitas ","generalError":"Existen errores en el formulario, por favor corríjalos antes de continuar.","generalPageError":"Hay errores en esta página. Por favor, corríjalos antes de continuar.","gradingScoreError":"El puntaje total debería ser sólo \"menos que\" o \"igual que\"","incompleteFields":"Existen campos requeridos incompletos. Por favor complételos.","lessThan":"Tu puntuación debería ser menor o igual que","maxDigitsError":"El máximo de dígitos permitido es","multipleFileUploads_emptyError":"El fichero {file} está vacío; por favor, selecciona de nuevo los ficheros sin él.","multipleFileUploads_fileLimitError":"Solo {fileLimit} carga de archivos permitida.","multipleFileUploads_minSizeError":"{file} is demasiado pequeño, el tamaño mínimo de fichero es: {minSizeLimit}.","multipleFileUploads_onLeave":"Se están cargando los ficheros, si cierras ahora, se cancelará dicha carga.","multipleFileUploads_sizeError":"{file} es demasiado grande; el tamaño del archivo no debe superar los {sizeLimit}.","multipleFileUploads_typeError":"El fichero {file} posee una extensión no permitida. Sólo están permitidas las extensiones {extensions}.","numeric":"Este campo sólo admite valores numéricos.","pastDatesDisallowed":"La fecha debe ser futura","required":"Campo requerido.","requireEveryCell":"Se requieren todas las celdas.","requireEveryRow":"Todas las filas son obligatorias.","requireOne":"Al menos un campo requerido.","uploadExtensions":"Solo puede subir los siguientes archivos:","uploadFilesize":"Tamaño del archivo no puede ser mayor que:","uploadFilesizemin":"Tamañao de archivo no puede ser menos de:","url":"Este campo solo contiene una URL válida.","wordLimitError":"Demasiadas palabras. El límite es","wordMinLimitError":"Muy pocas palabras. El mínimo es"});
+      JotForm.alterTexts({"couponApply":"Aplicar","couponBlank":"Por favor, introduzca un cupón","couponChange":"Cambio","couponEnter":"Escriba AHORRO y obtendra un descuento de envio gratis por compra superior a  10.000","couponExpired":"Cupón caducado. Por favor inténtelo de nuevo.","couponInvalid":"El cupón insertado no es válido, insértelo de nuevo","couponValid":"El cupón es válido","shippingShipping":"Envio :","taxTax":"Tax"}, true);
+	/*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,{"name":"perricompras","qid":"1","text":"PerriCompras","type":"control_head"},null,{"description":"","name":"nuestrosProductos","qid":"3","text":"Nuestros Productos","type":"control_paypalpro"},{"name":"tags","qid":"4","text":"Tags","type":"control_checkbox"},{"name":"favorVerificar","qid":"5","text":"Verifique que usted es humano","type":"control_captcha"},null,{"name":"telefono","qid":"7","subLabel":"Tel.","text":"Telefono","type":"control_textbox"},{"name":"consultasPedidos","qid":"8","subLabel":"Observaciones","text":"Consultas, pedidos especiales ...","type":"control_textarea"},{"name":"enviar","qid":"9","text":"Enviar","type":"control_button"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,{"name":"perricompras","qid":"1","text":"PerriCompras","type":"control_head"},null,{"description":"","name":"nuestrosProductos","qid":"3","text":"Nuestros Productos","type":"control_paypalpro"},{"name":"tags","qid":"4","text":"Tags","type":"control_checkbox"},{"name":"favorVerificar","qid":"5","text":"Verifique que usted es humano","type":"control_captcha"},null,{"name":"telefono","qid":"7","subLabel":"Tel.","text":"Telefono","type":"control_textbox"},{"name":"consultasPedidos","qid":"8","subLabel":"Observaciones","text":"Consultas, pedidos especiales ...","type":"control_textarea"},{"name":"enviar","qid":"9","text":"Enviar","type":"control_button"}]);}, 20); 
+</script>
+<link href="https://cdn01.jotfor.ms/static/formCss.css?3.3.34228" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/nova.css?3.3.34228" />
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?"/>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_feature.css?3.3.34228" />
+<style type="text/css">
+
+
+    .form-label-left{
+        width:150px;
+    }
+    .form-line{
+        padding-top:1px;
+        padding-bottom:1px;
+    }
+    .form-label-right{
+        width:150px;
+    }
+    .form-all{
+        width:1000px;
+        color:black !important;
+        font-family:'Roboto';
+        font-size:20px;
+    }
+</style>
+
+<style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+/*PREFERENCES STYLE*/
+    .form-all {
+      font-family: Roboto, sans-serif;
+    }
+    .form-all .qq-upload-button,
+    .form-all .form-submit-button,
+    .form-all .form-submit-reset,
+    .form-all .form-submit-print {
+      font-family: Roboto, sans-serif;
+    }
+    .form-all .form-pagebreak-back-container,
+    .form-all .form-pagebreak-next-container {
+      font-family: Roboto, sans-serif;
+    }
+    .form-header-group {
+      font-family: Roboto, sans-serif;
+    }
+    .form-label {
+      font-family: Roboto, sans-serif;
+    }
+  
+    .form-label.form-label-auto {
+      
+    display: block;
+    float: none;
+    text-align: left;
+    width: 100%;
+  
+    }
+  
+    .form-line {
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
+  
+    .form-all {
+      max-width: 1000px;
+      width: 100%;
+    }
+  
+    .form-label.form-label-left,
+    .form-label.form-label-right,
+    .form-label.form-label-left.form-label-auto,
+    .form-label.form-label-right.form-label-auto {
+      width: 150px;
+    }
+  
+    .form-all {
+      font-size: 20px
+    }
+    .form-all .qq-upload-button,
+    .form-all .qq-upload-button,
+    .form-all .form-submit-button,
+    .form-all .form-submit-reset,
+    .form-all .form-submit-print {
+      font-size: 20px
+    }
+    .form-all .form-pagebreak-back-container,
+    .form-all .form-pagebreak-next-container {
+      font-size: 20px
+    }
+  
+    .supernova .form-all, .form-all {
+      background-color: #fff;
+    }
+  
+    .form-all {
+      color: black;
+    }
+    .form-header-group .form-header {
+      color: black;
+    }
+    .form-header-group .form-subHeader {
+      color: black;
+    }
+    .form-label-top,
+    .form-label-left,
+    .form-label-right,
+    .form-html,
+    .form-checkbox-item label,
+    .form-radio-item label {
+      color: black;
+    }
+    .form-sub-label {
+      color: 1a1a25;
+    }
+  
+    .supernova {
+      background-color: #feada6  ;
+    }
+    .supernova body {
+      background: transparent;
+    }
+  
+    .form-textbox,
+    .form-textarea,
+    .form-dropdown,
+    .form-radio-other-input,
+    .form-checkbox-other-input,
+    .form-captcha input,
+    .form-spinner input 
+  
+    .supernova {
+      background-image: none;
+    }
+    #stage {
+      background-image: none;
+    }
+  
+    .form-all {
+      background-image: none;
+    }
+  
+  .ie-8 .form-all:before { display: none; }
+  .ie-8 {
+    margin-top: auto;
+    margin-top: initial;
+  }
+  
+  /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
+    /* Injected CSS Code */
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/buttons/form-submit-button-simple_black.css?3.3.34228"/>
+<form class="jotform-form" action="https://submit.jotform.com/submit/221735884227664/" method="post" name="form_221735884227664" id="221735884227664" accept-charset="utf-8" autocomplete="on">
+  <input type="hidden" name="formID" value="221735884227664" />
+  <input type="hidden" id="JWTContainer" value="" />
+  <input type="hidden" id="cardinalOrderNumber" value="" />
+  <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-default">
+          <div class="header-text httal htvam">
+            <h2 id="header_1" class="form-header" data-component="header">
+              PerriCompras
+            </h2>
+            <div id="subHeader_1" class="form-subHeader">
+              Haz tu pedido!
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_paypalpro" id="id_3" data-payment="true">
+        <label class="form-label form-label-top search-enabled product-sorting-enabled p-filter-two-column" id="label_3" for="input_3"> Nuestros Productos </label>
+        <div id="cid_3" class="form-input-wide">
+          <div data-wrapper-react="true" id="payment-wrapper-songbird" data-currency="USD" data-paymentType="product" data-sandbox="Disabled" data-sca="No" data-cardinalAPIkey="" data-cardinalAPIindentifier="" data-cardinalOrgUnitID="">
+            <div data-wrapper-react="true" class="product-container-wrapper">
+              <div class="filter-container">
+                <input type="text" name="productSearch-input" class="form-textbox" id="productSearch-input" size="15" placeholder="Search" autoComplete="off" />
+                <div class="payment-dropdown " id="payment-sorting-products-dropdown">
+                  <div class="dropdown-container">
+                    <div class="select-area" tabindex="0" role="button" aria-expanded="false">
+                      <span class="dropdown-hint">
+                        Ordenar Por
+                      </span>
+                      <span class="selected-value">
+                      </span>
+                      <i class="icon">
+                      </i>
+                    </div>
+                    <div class="select-content">
+                      <div class="options">
+                        <div aria-label="Ordenar Por " class="option " data-value="name_az">
+                          Nombre: A - Z
+                        </div>
+                        <div aria-label="Ordenar Por " class="option " data-value="name_za">
+                          Nombre Z . A
+                        </div>
+                        <div aria-label="Ordenar Por " class="option " data-value="price_lowest">
+                          Preci: Menor a Mayor
+                        </div>
+                        <div aria-label="Ordenar Por " class="option " data-value="price_highest">
+                          Precio: Mayor a Menor
+                        </div>
+                        <div class="option clear-option" data-value="clear">
+                          Clear Sort
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="simple_fpc" data-payment_type="paypalpro" data-component="payment1" value="3" />
+              <input type="hidden" name="payment_total_checksum" id="payment_total_checksum" data-component="payment2" />
+              <div id="image-overlay" class="overlay-content" style="display:none">
+                <img id="current-image" />
+                <span class="lb-prev-button">
+                  prev
+                </span>
+                <span class="lb-next-button">
+                  next
+                </span>
+                <span class="lb-close-button">
+                  ( X )
+                </span>
+                <span class="image-overlay-product-container">
+                  <ul class="form-overlay-item" pid="1000" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image">
+                      <img src="http://127.0.0.1:8000/static/core/img/product-1.png" />
+                    </li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1013" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image">
+                      <img src="http://127.0.0.1:8000/static/core/img/product-2.png" />
+                    </li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1012" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image">
+                      <img src="http://127.0.0.1:8000/static/core/img/product-3.png" />
+                    </li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1010" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image">
+                      <img src="http://127.0.0.1:8000/static/core/img/product-4.png" />
+                    </li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1011" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image">
+                      <img src="http://127.0.0.1:8000/static/core/img/product-5.png" />
+                    </li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1014" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image">
+                      <img src="https://www.jotform.com/uploads/cr.parada/form_files/product-6.jpg" />
+                    </li>
+                  </ul>
+                </span>
+              </div>
+              <div data-wrapper-react="true">
+                <span class="form-product-item hover-product-item " categories="non-categorized" pid="1000">
+                  <img src="http://127.0.0.1:8000/static/core/img/product-1.png" alt="product" class="form-product-image-with-options" width="50" style="height:auto;vertical-align:middle" />
+                  <div data-wrapper-react="true" class="form-product-item-detail">
+                    <input type="checkbox" class="form-checkbox  form-product-input" id="input_3_1000" name="q3_nuestrosProductos[][id]" value="1000" />
+                    <label for="input_3_1000" class="form-product-container">
+                      <span data-wrapper-react="true">
+                        <span class="form-product-name" id="product-name-input_3_1000">
+                          Arnes para perro grande
+                        </span>
+                        <span class="form-product-details">
+                          <b>
+                            <span data-wrapper-react="true">
+                              $
+                              <span id="input_3_1000_price">
+                                10,000.00
+                              </span>
+                            </span>
+                          </b>
+                        </span>
+                      </span>
+                      <div class="form-product-description" id="product-name-description-input_3_1000">
+                        Arnes para perro grande
+                      </div>
+                    </label>
+                    <br/>
+                    <br/>
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                      <label class="form-sub-label" for="input_3_quantity_1000_0" style="min-height:13px" aria-hidden="false"> Cantidad </label>
+                      <select class="form-dropdown" name="q3_nuestrosProductos[special_1000][item_0]" id="input_3_quantity_1000_0">
+                        <option value="0"> 0 </option>
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                        <option value="6"> 6 </option>
+                        <option value="7"> 7 </option>
+                        <option value="8"> 8 </option>
+                        <option value="9"> 9 </option>
+                        <option value="10"> 10 </option>
+                      </select>
+                    </span>
+                  </div>
+                </span>
+                <br/>
+                <span class="form-product-item hover-product-item " categories="non-categorized" pid="1013">
+                  <img src="http://127.0.0.1:8000/static/core/img/product-2.png" alt="product" class="form-product-image-with-options" width="50" style="height:auto;vertical-align:middle" />
+                  <div data-wrapper-react="true" class="form-product-item-detail">
+                    <input type="checkbox" class="form-checkbox  form-product-input" id="input_3_1013" name="q3_nuestrosProductos[][id]" value="1013" />
+                    <label for="input_3_1013" class="form-product-container">
+                      <span data-wrapper-react="true">
+                        <span class="form-product-name" id="product-name-input_3_1013">
+                          Bandanas
+                        </span>
+                        <span class="form-product-details">
+                          <b>
+                            <span data-wrapper-react="true">
+                              $
+                              <span id="input_3_1013_price">
+                                3,000.00
+                              </span>
+                            </span>
+                          </b>
+                        </span>
+                      </span>
+                      <div class="form-product-description" id="product-name-description-input_3_1013">
+                        Bandana para mascotas ajustables, por lo que puede ser para cualquier tamaño.
+                      </div>
+                    </label>
+                    <br/>
+                    <br/>
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                      <label class="form-sub-label" for="input_3_quantity_1013_0" style="min-height:13px" aria-hidden="false"> Cantidad </label>
+                      <select class="form-dropdown" name="q3_nuestrosProductos[special_1013][item_0]" id="input_3_quantity_1013_0">
+                        <option value="0"> 0 </option>
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                        <option value="6"> 6 </option>
+                        <option value="7"> 7 </option>
+                        <option value="8"> 8 </option>
+                        <option value="9"> 9 </option>
+                        <option value="10"> 10 </option>
+                      </select>
+                    </span>
+                  </div>
+                </span>
+                <br/>
+                <span class="form-product-item hover-product-item " categories="non-categorized" pid="1012">
+                  <img src="http://127.0.0.1:8000/static/core/img/product-3.png" alt="product" class="form-product-image-with-options" width="50" style="height:auto;vertical-align:middle" />
+                  <div data-wrapper-react="true" class="form-product-item-detail">
+                    <input type="checkbox" class="form-checkbox  form-product-input" id="input_3_1012" name="q3_nuestrosProductos[][id]" value="1012" />
+                    <label for="input_3_1012" class="form-product-container">
+                      <span data-wrapper-react="true">
+                        <span class="form-product-name" id="product-name-input_3_1012">
+                          Bandanas-Moto
+                        </span>
+                        <span class="form-product-details">
+                          <b>
+                            <span data-wrapper-react="true">
+                              $
+                              <span id="input_3_1012_price">
+                                2,500.00
+                              </span>
+                            </span>
+                          </b>
+                        </span>
+                      </span>
+                      <div class="form-product-description" id="product-name-description-input_3_1012">
+                        Bandanas moto para perros pequeños
+                      </div>
+                    </label>
+                    <br/>
+                    <br/>
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                      <label class="form-sub-label" for="input_3_quantity_1012_0" style="min-height:13px" aria-hidden="false"> Cantidad </label>
+                      <select class="form-dropdown" name="q3_nuestrosProductos[special_1012][item_0]" id="input_3_quantity_1012_0">
+                        <option value="0"> 0 </option>
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                        <option value="6"> 6 </option>
+                        <option value="7"> 7 </option>
+                        <option value="8"> 8 </option>
+                        <option value="9"> 9 </option>
+                        <option value="10"> 10 </option>
+                      </select>
+                    </span>
+                  </div>
+                </span>
+                <br/>
+                <span class="form-product-item hover-product-item " categories="non-categorized" pid="1010">
+                  <img src="http://127.0.0.1:8000/static/core/img/product-4.png" alt="product" class="form-product-image-with-options" width="50" style="height:auto;vertical-align:middle" />
+                  <div data-wrapper-react="true" class="form-product-item-detail">
+                    <input type="checkbox" class="form-checkbox  form-product-input" id="input_3_1010" name="q3_nuestrosProductos[][id]" value="1010" />
+                    <label for="input_3_1010" class="form-product-container">
+                      <span data-wrapper-react="true">
+                        <span class="form-product-name" id="product-name-input_3_1010">
+                          Cama
+                        </span>
+                        <span class="form-product-details">
+                          <b>
+                            <span data-wrapper-react="true">
+                              $
+                              <span id="input_3_1010_price">
+                                20,000.00
+                              </span>
+                            </span>
+                          </b>
+                        </span>
+                      </span>
+                      <div class="form-product-description" id="product-name-description-input_3_1010">
+                        Cama hecha con materiales resistentes, para que tu mascota no pueda romperlas
+                      </div>
+                    </label>
+                    <br/>
+                    <br/>
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                      <label class="form-sub-label" for="input_3_quantity_1010_0" style="min-height:13px" aria-hidden="false"> Cantidad </label>
+                      <select class="form-dropdown" name="q3_nuestrosProductos[special_1010][item_0]" id="input_3_quantity_1010_0">
+                        <option value="0"> 0 </option>
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                        <option value="6"> 6 </option>
+                        <option value="7"> 7 </option>
+                        <option value="8"> 8 </option>
+                        <option value="9"> 9 </option>
+                        <option value="10"> 10 </option>
+                      </select>
+                    </span>
+                  </div>
+                </span>
+                <br/>
+                <span class="form-product-item hover-product-item " categories="non-categorized" pid="1011">
+                  <img src="http://127.0.0.1:8000/static/core/img/product-5.png" alt="product" class="form-product-image-with-options" width="50" style="height:auto;vertical-align:middle" />
+                  <div data-wrapper-react="true" class="form-product-item-detail">
+                    <input type="checkbox" class="form-checkbox  form-product-input" id="input_3_1011" name="q3_nuestrosProductos[][id]" value="1011" />
+                    <label for="input_3_1011" class="form-product-container">
+                      <span data-wrapper-react="true">
+                        <span class="form-product-name" id="product-name-input_3_1011">
+                          Collares
+                        </span>
+                        <span class="form-product-details">
+                          <b>
+                            <span data-wrapper-react="true">
+                              $
+                              <span id="input_3_1011_price">
+                                5,000.00
+                              </span>
+                            </span>
+                          </b>
+                        </span>
+                      </span>
+                      <div class="form-product-description" id="product-name-description-input_3_1011">
+                        Collares para tus mascotas hechos de cuero.
+                      </div>
+                    </label>
+                    <br/>
+                    <br/>
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                      <label class="form-sub-label" for="input_3_quantity_1011_0" style="min-height:13px" aria-hidden="false"> Cantidad </label>
+                      <select class="form-dropdown" name="q3_nuestrosProductos[special_1011][item_0]" id="input_3_quantity_1011_0">
+                        <option value="0"> 0 </option>
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                        <option value="6"> 6 </option>
+                        <option value="7"> 7 </option>
+                        <option value="8"> 8 </option>
+                        <option value="9"> 9 </option>
+                        <option value="10"> 10 </option>
+                      </select>
+                    </span>
+                  </div>
+                </span>
+                <br/>
+                <span class="form-product-item hover-product-item " categories="non-categorized" pid="1014">
+                  <img src="https://www.jotform.com/uploads/cr.parada/form_files/product-6.jpg" alt="product" class="form-product-image-with-options" width="50" style="height:auto;vertical-align:middle" />
+                  <div data-wrapper-react="true" class="form-product-item-detail">
+                    <input type="checkbox" class="form-checkbox  form-product-input" id="input_3_1014" name="q3_nuestrosProductos[][id]" value="1014" />
+                    <label for="input_3_1014" class="form-product-container">
+                      <span data-wrapper-react="true">
+                        <span class="form-product-name" id="product-name-input_3_1014">
+                          Arnes generico
+                        </span>
+                        <span class="form-product-details">
+                          <b>
+                            <span data-wrapper-react="true">
+                              $
+                              <span id="input_3_1014_price">
+                                10,000.00
+                              </span>
+                            </span>
+                          </b>
+                        </span>
+                      </span>
+                      <div class="form-product-description" id="product-name-description-input_3_1014">
+                        arnes ajustable
+                      </div>
+                    </label>
+                    <br/>
+                    <br/>
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                      <label class="form-sub-label" for="input_3_quantity_1014_0" style="min-height:13px" aria-hidden="false"> Cantidad </label>
+                      <select class="form-dropdown" name="q3_nuestrosProductos[special_1014][item_0]" id="input_3_quantity_1014_0">
+                        <option value="0"> 0 </option>
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                        <option value="6"> 6 </option>
+                        <option value="7"> 7 </option>
+                        <option value="8"> 8 </option>
+                        <option value="9"> 9 </option>
+                        <option value="10"> 10 </option>
+                      </select>
+                    </span>
+                  </div>
+                </span>
+                <br/>
+                <div id="coupon-container" style="border:1px solid lightgray;padding:5px;border-radius:6px;width:200px;margin-top:8px">
+                  <table id="coupon-table">
+                    <tr>
+                      <th colSpan="2" style="text-align:left">
+                        <label id="coupon-header" for="coupon-input"> Introduzca Cupón </label>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" name="coupon-input" id="coupon-input" data-stripe="false" size="15" autoComplete="off" aria-labelledby="coupon-header coupon-message" />
+                      </td>
+                      <td width="40%" style="text-align:center">
+                        <img src="https://cdn.jotfor.ms//images/ajax-loader.gif" alt="coupon loading" id="coupon-loader" style="display:none;vertical-align:top" />
+                        <button type="button" id="coupon-button" data-qid="input_3" value="">
+                          Aplicar
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th colSpan="2" style="text-align:left">
+                        <span id="coupon-message" role="alert">
+                        </span>
+                      </th>
+                    </tr>
+                  </table>
+                </div>
+                <br/>
+                <input type="hidden" id="input_3_coupon" name="coupon" />
+                <span class="form-payment-divider" style="margin:0 0 8px">
+                </span>
+                <span class="form-payment-subtotal form-payment-label">
+                  <span id="subtotal-text">
+                    Subtotal
+                  </span>
+                   
+                  <span class="form-payment-price">
+                    <span data-wrapper-react="true">
+                      $
+                      <span id="payment_subtotal">
+                        0.00
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="form-payment-shipping form-payment-label">
+                  <span id="shipping-text">
+                    Envío
+                  </span>
+                   
+                  <span class="form-payment-price">
+                    <span data-wrapper-react="true">
+                      $
+                      <span id="payment_shipping">
+                        0.00
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="form-payment-divider" style="margin:8px 0">
+                </span>
+                <span class="form-payment-total">
+                  <b>
+                    <span id="total-text">
+                      Total
+                    </span>
+                     
+                    <span class="form-payment-price">
+                      <span data-wrapper-react="true">
+                        $
+                        <span id="payment_total">
+                          0.00
+                        </span>
+                      </span>
+                    </span>
+                  </b>
+                </span>
+              </div>
+              <hr/>
+            </div>
+            <table class="form-address-table payment-form-table" style="border:0" cellPadding="4" cellSpacing="0">
+            </table>
+          </div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_textarea" id="id_8">
+        <label class="form-label form-label-top" id="label_8" for="input_8"> Quieres alguna expecificacion de tu pedido?</label>
+        <div id="cid_8" class="form-input-wide">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <textarea id="input_8" class="form-textarea" name="q8_consultasPedidos" cols="30" rows="6" data-component="textarea" aria-labelledby="label_8 sublabel_input_8"></textarea>
+            <label class="form-sub-label" for="input_8" id="sublabel_input_8" style="min-height:13px" aria-hidden="false"> Observaciones </label>
+          </span>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-2 jf-required" data-type="control_captcha" id="id_5">
+        <label class="form-label form-label-top" id="label_5" for="input_5">
+          Verifique que usted es humano
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_5" class="form-input-wide jf-required">
+          <section data-wrapper-react="true">
+            <div id="recaptcha_input_5" data-component="recaptcha" data-callback="recaptchaCallbackinput_5" data-expired-callback="recaptchaExpiredCallbackinput_5">
+            </div>
+            <input type="hidden" id="input_5" class="hidden validate[required]" name="recaptcha_visible" required="" />
+            <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=explicit&amp;onload=recaptchaLoadedinput_5"></script>
+            <script type="text/javascript">
+                    var recaptchaLoadedinput_5 = function()
+          {
+            window.grecaptcha.render($("recaptcha_input_5"), {
+              sitekey: '6LdU3CgUAAAAAB0nnFM3M3T0sy707slYYU51RroJ',
+            });
+            var grecaptchaBadge = document.querySelector('.grecaptcha-badge');
+            if (grecaptchaBadge)
+            {
+              grecaptchaBadge.style.boxShadow = 'gray 0px 0px 2px';
+            }
+          };
+
+        /**
+         * Called when the reCaptcha verifies the user is human
+         * For invisible reCaptcha;
+         *   Submit event is stopped after validations and recaptcha is executed.
+         *   If a challenge is not displayed, this will be called right after grecaptcha.execute()
+         *   If a challenge is displayed, this will be called when the challenge is solved successfully
+         *   Submit is triggered to actually submit the form since it is stopped before.
+         */
+        var recaptchaCallbackinput_5 = function()
+          {
+            var isInvisibleReCaptcha = false;
+            var hiddenInput = $("input_5");
+            hiddenInput.setValue(1);
+            if (!isInvisibleReCaptcha)
+            {
+              if (hiddenInput.validateInput)
+              {
+                hiddenInput.validateInput();
+              }
+            }
+            else
+            {
+              triggerSubmit(hiddenInput.form)
+            }
+
+            function triggerSubmit(formElement)
+            {
+              var button = formElement.ownerDocument.createElement('input');
+              button.style.display = 'none';
+              button.type = 'submit';
+              formElement.appendChild(button).click();
+              formElement.removeChild(button);
+            }
+          }
+
+          // not really required for invisible recaptcha
+        var recaptchaExpiredCallbackinput_5 = function()
+          {
+            var hiddenInput = $("input_5");
+            hiddenInput.writeAttribute("value", false);
+            if (hiddenInput.validateInput)
+            {
+              hiddenInput.validateInput();
+            }
+          }
+            </script>
+          </section>
+        </div>
+      </li>
+      <br>
+      <li class="form-line" data-type="control_button" id="id_9">
+        <div id="cid_9" class="form-input-wide">
+          <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
+            <button id="input_9" type="submit" class="form-submit-button form-submit-button-simple_black submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+              <a href="venta">Enviar</a> 
+            </button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <script>
+  JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+  JotForm.poweredByText = "Desarrollado por Jotform";
+  </script>
+  <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="221735884227664" />
+  <script type="text/javascript">
+  var all_spc = document.querySelectorAll("form[id='221735884227664'] .si" + "mple" + "_spc");
+for (var i = 0; i < all_spc.length; i++)
+{
+  all_spc[i].value = "221735884227664-221735884227664";
+}
+  </script>
+</form>
+
+
+
+
+
+
+
+<!-- Footer -->
+<div class="footer">
+    <footer>
+        <!-- Grid container -->
+        <div class="container-fluid">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" target="_BLANK" role="button"
+              ><img src="{% static 'core/img/Facebook.png' %}" alt="wsp", width="24" height="24"><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.twitter.com" target="_BLANK" role="button"
+              ><img src="{% static 'core/img/Twitter.png' %}" alt="wsp", width="24" height="24"><i class="fab fa-twitter"></i
+            ></a>
+      
+      
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com" target="_BLANK" role="button"
+              ><img src="{% static 'core/img/Instagram.png' %}" alt="wsp", width="24" height="24"><i class="fab fa-instagram"></i
+            ></a>
+    
+            <!-- WSP -->
+            <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                ><img src="{% static 'core/img/Whatsapp.png' %}" alt="wsp", width="24" height="24"><i class="fab fa-Whastapp"></i
+            ></a>
+      
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            @2022 Copyrigth Derechos reservados Martin Godoy, Cristopher Parada, Carlos Buffo, Matia Godoy
+         
+        </div>
+        <!-- Copyright -->
+      </footer>
+</div>
+<!-- Footer FIN-->
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>   
+</body>
+</html>
