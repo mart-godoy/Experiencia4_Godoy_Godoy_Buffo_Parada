@@ -1,0 +1,50 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#enviar").click(function(){
+            $.get("http://127.0.0.1:8000/api/lista_productos",
+                function(data){
+                    $.each(data.lista_productos, function(i, item){
+                        $("#productos").append("<tr><td>"+item.idp+"</td><td>"+item.nombre+"</td><td>"+item.descripcion+"</td></tr>");
+                    });
+                });
+            });
+
+
+        });
+
+
+
+    </script>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h3>ejemplo traer datos</h3>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary" id="enviar">Traer datos</button>
+        </div>
+        <div class="row">
+
+            <table class="table" id="productos">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
