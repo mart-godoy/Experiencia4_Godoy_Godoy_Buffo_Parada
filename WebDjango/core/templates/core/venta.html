@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+<head>
+  <link rel="icon" href="{% static 'core/img/logo.ico' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'core/css/estilo.css' %}">
+  <script src="{% static 'core/js/validacionrut.js' %}"></script>
+  <title>Perricompras.cl</title>
+
+</head>
+
+<body>
+  <!-- Barra de navegacion -->
+  <div class="container-barra">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index"><img src="{% static 'core/img/logo1.png' %}" alt="logo" width="50" height="50"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/index" style="color: white;" >Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/compra" style="color: white;">Articulos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/nosotros" style="color: white;">Sobre Nosotros  </a> 
+            </li>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuario
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/creacionuser">Crea tu cuenta</a></li>
+              <li><a class="dropdown-item" href="/leer">Ver tu cuenta</a></li>
+            </ul>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/ventleer" style="color: white;">Ver Venta </a>
+            </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!--Fin barra de navegacion-->
+
+
+
+  <div class="container-for">
+    <div class="row">
+        <div class="info-form">
+            <h2 style="color: black;">Escribe tus datos de envio</h2>
+            <p style="color: black;">Estos datos son necesarios para saber donde enviar el producto <br> comprado luego de haber realizado tu compra con nosotros</p>
+         </div>
+        </div>
+      </div>
+      <div class="page-content">
+      <div class="form1">
+        <form class="container-form" action="/registrarEnvio/" autocomplete="off" method="POST" id="Formvent" >
+          {% csrf_token %}
+          <input type="text" name="nombre" placeholder="Nombre completo" class="form__input" pattern="[A-Za-z A-Za-z A-Za-z A-Za-z]+" required>
+          <input type="email" name="email" placeholder="Email" class="form__input" required>
+          <input type="text" id="rut" name="rut" class="form__input" required oninput="checkRut(this)" placeholder="Ingrese RUT" >
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" class="form__input" placeholder="N°Celular" required>
+          <select class="form__input" id="region" name="region" required>
+            <option selected disabled >Region</option>
+            <option id="nom" value=></option>
+            </select>
+          <select class="form__input" id="comuna" name="comuna" required>
+            <option selected disabled >Comuna</option>
+            <option></option>
+            </select>
+          <input type="text" name="calle" placeholder="calle" class="form__input" required>
+          <input type="text" name="casa" placeholder="Numero de casa" class="form__input" required>
+          <input type="submit" value="Enviar" class="form__cta">
+      </form>
+        </div>
+      
+      
+
+      </div>
+ 
+<!--Fin Formulario-->
+
+
+
+<!-- Footer -->
+<div class="footer">
+  <footer>
+        <!-- Grid container -->
+      <div class="container-fluid">
+          <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" target="_BLANK" role="button"
+            ><img src="{% static 'core/img/Facebook.png' %}" alt="wsp", width="24" height="24"><i class="fab fa-facebook-f"></i
+          ></a>
+      
+            <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.twitter.com" target="_BLANK" role="button"
+            ><img src="{% static 'core/img/Twitter.png' %}" alt="wsp", width="24" height="24"><i class="fab fa-twitter"></i
+          ></a>
+      
+      
+            <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com" target="_BLANK" role="button"
+            ><img src="{% static 'core/img/Instagram.png' %}" alt="wsp", width="24" height="24"><i class="fab fa-instagram"></i
+          ></a>
+    
+            <!-- WSP -->
+          <a class="btn btn-outline-light btn-floating m-1"  role="button"
+              ><img src="{% static 'core/img/Whatsapp.png' %}" alt="wsp", width="24" height="24"><i class="fab fa-Whastapp"></i
+          ></a>
+      
+        </section>
+          <!-- Section: Social media -->
+      </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            @2022 Copyrigth Derechos reservados Martin Godoy, Cristopher Parada, Carlos Buffo, Matia Godoy
+         
+      </div>
+        <!-- Copyright -->
+    </footer>
+  </div>
+  <!-- Footer FIN-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+  let select = ""
+  let num=""
+  
+  let num2=""
+        let url = 'https://apis.digital.gob.cl/dpa/regiones';
+        fetch(url)
+              .then( response => response.json() )
+              .then( data => {
+                console.log(data)
+              
+              for (var i = 0; i < data.length; i++) {
+                if (i==0)  {
+                  select += '<option value="' + data[i].codigo + '"'+ ' selected disabled' +'>' + 'Region' + '</option>'
+                 num+=(data[i].codigo )
+                }
+                select += '<option value="' + data[i].codigo + '">' + data[i].nombre + '</option>'
+                 num+=(data[i].codigo)
+                 
+              }
+  
+              document.getElementById('region').innerHTML = select
+              console.log(select)
+             
+              })
+              .catch( error => console.log(error) )
+  
+              $('#region').change(function() {
+                var codigo= $('#region').val();
+                  let url2 = `https://apis.digital.gob.cl/dpa/regiones/${codigo}/comunas`;
+              fetch(url2)
+                    .then( response2 => response2.json() )
+                    .then( data2 => {
+                      console.log(data2)
+                      let select2 = "";
+                    for (var i = 0; i < data2.length; i++) {
+                      if (i==0)  {
+                        select2 += '<option value="' + data2[i].codigo + '"'+ ' selected disabled' +'>' + '--Comuna--' + '</option>'
+                      num2+=(data2[i].codigo )
+                      }
+                      select2 += '<option>' + data2[i].nombre + '</option>'
+                       num2+=(data2[i].codigo)  
+                    }
+        
+                    document.getElementById('comuna').innerHTML = select2
+                    console.log(select2)
+                   
+                    })
+                    .catch( error => console.log(error) )
+              });
+              
+              setTimeout(function() {$('#region').trigger('change');}, 2000);
+</script>
+</body>
+</html>

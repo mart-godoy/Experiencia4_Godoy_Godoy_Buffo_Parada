@@ -1,0 +1,412 @@
+body{
+  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+
+}
+.footer{
+  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+  padding: 1em 0 ;
+  text-align: center;
+  margin-top: 120px;
+  
+
+}
+
+
+.container-carrusel{
+  padding-top: 15px;
+  display: flow-root;
+  width: 80%;
+  margin: auto;
+  margin-top: 5px;
+  box-shadow: 10px 10px 10px rosybrown;
+}
+
+button{
+  background-color: transparent;
+  border: 0px;
+}
+
+.carousel-indicators button{
+  margin-left: 25px;
+  margin-bottom: 7.5px;
+  height:5px;
+  width: 30px;
+  background-color: rgb(168, 0, 0);
+  opacity: 50%;
+  border-color: #3C3C3C 5px;
+
+}
+
+.container-contenido{
+  background-color: rgba(255, 255, 255, 0.742);
+  color:black;
+  margin-top: 15px;
+  margin-left: 19%;
+  margin-right:19%;
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px rosybrown;
+}
+.container-nosotros{
+  background-color: rgba(255, 255, 255, 0.742);
+  color:black;
+  margin-top: 15px;
+  margin-left: 29%;
+  margin-right:29%;
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px rosybrown;
+}
+
+.video{
+  margin-top: 20px;
+}
+
+
+
+.container-carta {
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px rosybrown;
+
+
+
+}
+
+.accesorios{
+    text-align: right;
+}
+
+.container-for{
+  width: 100%;
+  margin-right: auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-top: 45;
+    
+}
+
+.form1{
+  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+  width: 90%;
+  max-width: 400px;
+  border-radius: 1em;
+  padding: 2.9em 1.1em;
+  margin-left: 20px ;
+
+}
+.form{
+  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+  width: 90%;
+  max-width: 400px;
+  border-radius: 1em;
+  padding: 2.9em 1.1em;
+  margin-left: 20px ;
+
+}
+
+
+
+.container-form{
+ width: 100%;
+ display: grid;
+ gap: 1em;
+ grid-auto-columns: 100%;
+    
+}
+
+.form__input{
+  padding: .8em 1em;
+  outline: none;
+  border: none;
+  border: 1px solid;
+  border-radius: 0.2em;
+}
+
+.form__input--message{
+  resize: none;
+  padding: 1.8em 1em;
+  margin-bottom: .5em;
+ 
+}
+
+
+.form__cta{
+font-size: 1rem;
+background-color: #089fe0;
+color: #fff;
+border: none;
+padding: .7em 0;
+border-radius: .2em;
+cursor: pointer;
+font-weight: 400;
+}
+
+@media (max-width:450px){
+  .form{
+    padding:3.5em 1em;
+  }
+}
+.container-for h2{
+  margin-bottom: 15px;
+  font-size: 35px
+}
+.container-for p{
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.container-for a{
+  font-size: 17px;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 15px;
+  color:black;
+  font-weight: 700;
+}
+.container-for a i{
+  color: aqua;
+  margin-right: 10px;
+}
+
+.container-boton{
+  margin: 5px;
+  margin-left: auto;
+}
+.button-checkout {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA; /* Blue */
+  transition-duration: 0.4s;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+.button-checkout:hover {
+  background-color: #008CBA; /* Blue */
+  color: white;
+}
+
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product-container {
+  margin: 15px;
+  padding: 2px 16px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+}
+
+.product-container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.product-container img {
+  width: 300px;
+}
+
+.product-container h1 {
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.button-add {
+  background-color: white;
+  color: black;
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+
+.button-add:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.linkis{
+  margin-right: 5000px;
+  }
+.maipu{
+    margin-right: 1455px;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+
+.formulario {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+  
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 20px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}}
+
+
+  .button-checkout {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA; /* Blue */
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
